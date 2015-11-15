@@ -1,0 +1,37 @@
+
+.data-table{
+	min-width: 600px;
+	font-family: calibri;
+}
+
+.table-bordered{
+	font-size: 12px
+}
+
+.table tr > th{
+	vertical-align: middle !important;
+	text-align: center;
+}
+
+.img{
+	float: right;
+}
+
+.img > img{
+	width: 110px;
+}
+
+.ctt{
+	width: 100%;
+	margin: 0 0;
+	resize: none;
+	border: 0;
+	height: 50px;
+}
+
+.panel-footer{
+	background: none;
+	position: absolute;
+	right: 0;
+	border-top:0;
+}

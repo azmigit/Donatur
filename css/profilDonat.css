@@ -1,0 +1,137 @@
+.container{
+	padding: 5px;
+}
+
+.panel-heading{
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.title2{
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 2px;
+	font-weight: bold;
+	color: #f89748;
+	margin-bottom: 2px;
+}
+
+.title-donatur{
+	background: #f89748;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.title-donatur h1{
+	color: #fff;
+}
+
+.list-gabung{
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+.list-gabung li{
+	display: inline-block;
+	min-width: 100px;
+	margin-top: 5px;
+	margin-left: -5px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+}
+
+.list-gabung li:nth-of-type(1):after{
+	content: '';
+	position: absolute;
+	border-color: #7f7f7f transparent transparent transparent;
+	border-width: 15px;
+	border-style: solid;
+	margin: 30px -40px;
+}
+
+.list-gabung li:nth-of-type(2):after{
+	content: '';
+	position: absolute;
+	border-color: #4aadc4 transparent transparent transparent;
+	border-width: 15px;
+	border-style: solid;
+	margin: 30px -40px;
+}
+
+.list-gabung li:nth-of-type(3):after{
+	content: '';
+	position: absolute;
+	border-color: #f89748 transparent transparent transparent;
+	border-width: 15px;
+	border-style: solid;
+	margin: 30px -40px;
+}
+
+.list-gabung li:nth-of-type(4):after{
+	content: '';
+	position: absolute;
+	border-color: #fe0000 transparent transparent transparent;
+	border-width: 15px;
+	border-style: solid;
+	margin: 30px -40px;
+}
+
+.c1{
+	background: #7f7f7f;
+}
+
+.c2{
+	background: #4aadc4;
+}
+
+.c3{
+	background: #f89748;
+}
+
+.c4{
+	background: #fe0000;
+}
+
+.list-value{
+	margin-left: 10px;
+	text-align: center;
+}
+
+.list-value li{
+	display: inline-block;
+	margin-top: 5px;
+	text-align: center;
+	line-height: 30px;
+	min-width: 100px;
+	font-weight: bold;
+}
+
+.box-pendapatan{
+	border: 1px solid #DDD;
+	border-radius: 10px 0px;
+}
+
+.jk-persen{
+	position: absolute;
+	margin-top: -35px;
+	margin-left: -5px;
+}
+
+.jk-persen li{
+	list-style: none;
+	display: inline-block;
+	text-align: center;
+	min-width: 100px;
+	font-weight: 800;
+}
+
+#highcharts-4{
+	height: 450px !important;
+}
+
+#highcharts-4 > svg{
+	height: 450px !important;
+}
