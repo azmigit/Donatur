@@ -294,14 +294,11 @@ $te = pencapaian($_POST['kota']);
 
 } else if ($_GET['aksi'] == 'pencarian0') {
 
-	$qr = mysql_query("SELECT a.`muzakki`, a.`id_muzakki`, a.`telpon`
-			FROM 
-				corez_muzakki a
-				INNER JOIN corez_transaksi b ON b.id_muzakki = a.id_muzakki		
-				INNER JOIN setting_program c ON c.id_program = b.id_program		
-				INNER JOIN setting_sumber_dana d ON d.id_sumber_dana = c.id_sumber_dana		
-			WHERE YEAR(a.tgl_reg) <= YEAR(NOW()) AND YEAR(b.tgl_transaksi) = YEAR(NOW()) AND d.sumber_dana LIKE '%Zakat%'
-			GROUP BY a.id_muzakki");
+	$qr = mysql_query("SELECT 
+							id_muzakki, muzakki, telpon
+						FROM 
+							corez_muzakki a		
+						WHERE YEAR(a.tgl_reg) <=2015");
 
 			
 	echo '<div class="modal-dialog modal-lg">
