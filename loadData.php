@@ -75,6 +75,7 @@ $te = pencapaian($_POST['kota']);
 <?php
 //filter 1 profil
 }else if($_GET['aksi']=='filter1'){
+
 	echo "<table class='table table-bordered'>
 	    	<tr style='background:#99ccff'>
 	    		<th rowspan='2'>Jenis Program</th>
@@ -291,7 +292,58 @@ $te = pencapaian($_POST['kota']);
 					</tr>
 		</table>";
 
-} else if ($_GET['aksi'] == 'pencarian') {
+} else if ($_GET['aksi'] == 'pencarian0') {
+
+	$qr = mysql_query("SELECT a.`muzakki`, a.`id_muzakki`, a.`telpon`
+			FROM 
+				corez_muzakki a
+				INNER JOIN corez_transaksi b ON b.id_muzakki = a.id_muzakki		
+				INNER JOIN setting_program c ON c.id_program = b.id_program		
+				INNER JOIN setting_sumber_dana d ON d.id_sumber_dana = c.id_sumber_dana		
+			WHERE YEAR(a.tgl_reg) <= YEAR(NOW()) AND YEAR(b.tgl_transaksi) = YEAR(NOW()) AND d.sumber_dana LIKE '%Zakat%'
+			GROUP BY a.id_muzakki");
+
+			
+	echo '<div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Berdonasi Zakat</h4>
+		      </div>
+		      <div class="modal-body">
+			      <table id="provinsi" class="table table-bordered" cellspacing="0" width="100%"><thead>
+			            <tr>
+			                <th width="10%">ID Muzakki</th>
+			                <th width="15%">Muzakki</th>
+			                <th width="15%">Telpon</th>
+			            </tr>
+			        </thead>
+			        <tbody>';
+    
+					    while($dt = mysql_fetch_array($qr)){
+							echo "<tr>
+									<td><input type='hidden' value='$dt[id_muzakki]' name='id_muzakki'>".$dt['id_muzakki']."</td>
+									<td>".$dt['muzakki']."</td>
+									<td><a href='tel:$dt[telpon]'>".$dt['telpon']."</a></td>
+								  </tr>";
+						}
+
+	echo '			</tbody>
+		    	</table>
+	    	  </div>
+		    </div>
+		  </div>';
+
+	    echo '<script src="datatables/jquery.dataTables.js"></script>
+    <script src="datatables/dataTables.bootstrap.js"></script>
+    
+	<script type="text/javascript">
+        $(function() {
+            $("#provinsi").dataTable();
+        });
+    </script>';
+
+} else if ($_GET['aksi'] == 'pencarian2') {
 
 	$qr = mysql_query("SELECT a.`muzakki`, a.`id_muzakki`, a.`telpon`
 			FROM 

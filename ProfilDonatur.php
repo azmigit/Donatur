@@ -255,10 +255,19 @@
 		                point: {
 		                    events: {
 		                        click: function () {
-		                            if(this.x == 2){
+		                            if (this.x == 0){
 		                            	$.ajax({
 								            type: 'POST',
-								            url: 'loadData.php?aksi=pencarian',
+								            url: 'loadData.php?aksi=pencarian0',
+								            success: function(response) {
+								                $('#myModal').html(response);
+												$('#myModal').modal('show');
+								            }
+								        });
+		                            }else if (this.x == 2){
+		                            	$.ajax({
+								            type: 'POST',
+								            url: 'loadData.php?aksi=pencarian2',
 								            success: function(response) {
 								                $('#myModal').html(response);
 												$('#myModal').modal('show');
